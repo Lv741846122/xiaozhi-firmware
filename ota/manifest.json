@@ -1,7 +1,7 @@
 {
     "firmware":  {
-                     "version":  "2.6.4",
-                     "url":  "https://lv741846122.github.io/xiaozhi-firmware/fw/app-2.6.4.bin",
+                     "version":  "2.6.5",
+                     "url":  "https://lv741846122.github.io/xiaozhi-firmware/fw/app-2.6.5.bin",
                      "force":  0
                  }
 }
