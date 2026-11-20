@@ -2,14 +2,16 @@
 
 ESP32-S3 小智机器人（LCDwiki ES3C28P）的固件发布仓库。只存放编译产物，源码不在这里。
 
-## 两个变体（只保留这两个）
+## 两个变体
 
-| 变体 | 形象 | 方向 | 清单 | 镜像命名 |
-|---|---|---|---|---|
-| `emote` | 蓝色大肥鱼（当前主力） | 横屏 320×240 | `ota/manifest.json` | `fw/emote-<version>.bin` |
-| `portrait` | grok 表情球（黑底白球） | 竖屏 240×320 | `ota/manifest-portrait.json` | `fw/portrait-<version>.bin` |
+| 变体 | 形象 | 方向 | 更新方式 |
+|---|---|---|---|
+| `emote` | 蓝色大肥鱼（当前主力） | 横屏 320×240 | **OTA**，清单 `ota/manifest.json`，镜像 `fw/emote-<version>.bin` |
+| `portrait` | grok 表情球（黑底白球） | 竖屏 240×320 | **仅历史留档**，无 OTA 通道，只能用 USB 刷 |
 
-**两台设备各自指向自己的清单，物理上不可能读到对方的固件**——清单里的 `url` 只指向本变体的镜像文件名。
+竖屏版是 8 天前 fix23 的产物，那一版固件里没有 OTA 代码，无法读取本仓库的清单。它的历史 zip 保留在开发机归档中，本仓库不提供清单。
+
+**两个变体的文件物理隔离**：清单里的 `url` 只指向本变体的镜像名，设备不会读到对方的固件。
 
 ## 清单格式
 
@@ -34,17 +36,16 @@ jsDelivr 把 `@main` 解析出的 commit 缓存约 12 小时，新清单当天�
 ## 发布
 
 ```powershell
-# 表情版（默认）
+# 发布表情版（默认变体）
 E:\esp\publish_ota.ps1
-
-# 竖屏版
-E:\esp\publish_ota.ps1 -Variant portrait
 
 # 只发布已编译好的镜像
 E:\esp\publish_ota.ps1 -Version 1.0.1 -SkipBuild
 ```
 
 脚本会：编译 → 算 SHA256 → 校验镜像头 → 写清单 → 提交推送 → 触发 Pages 构建。
+
+`-Variant portrait` 已在脚本里预留，但竖屏固件目前没有 OTA 代码，先别用。
 
 ## 注意
 
