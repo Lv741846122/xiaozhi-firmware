@@ -1,7 +1,7 @@
 {
-  "firmware": {
-    "version": "2.6.0",
-    "url": "https://cdn.jsdelivr.net/gh/Lv741846122/xiaozhi-firmware@fw-2.6.0/fw/app-2.6.0.bin",
-    "force": 0
-  }
+    "firmware":  {
+                     "version":  "2.6.1",
+                     "url":  "https://cdn.jsdelivr.net/gh/Lv741846122/xiaozhi-firmware@fw-2.6.1/fw/app-2.6.1.bin",
+                     "force":  0
+                 }
 }
