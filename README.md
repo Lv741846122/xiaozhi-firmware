@@ -18,8 +18,8 @@ ESP32-S3 小智机器人（LCDwiki ES3C28P）的固件发布仓库。只存放�
 ```json
 {
   "firmware": {
-    "version": "1.0.0",
-    "url": "https://lv741846122.github.io/xiaozhi-firmware/fw/emote-1.0.0.bin",
+    "version": "1.0.2",
+    "url": "https://lv741846122.github.io/xiaozhi-firmware/fw/emote-1.0.2.bin",
     "force": 0
   }
 }
@@ -40,10 +40,12 @@ jsDelivr 把 `@main` 解析出的 commit 缓存约 12 小时，新清单当天�
 E:\esp\publish_ota.ps1
 
 # 只发布已编译好的镜像
-E:\esp\publish_ota.ps1 -Version 1.0.1 -SkipBuild
+E:\esp\publish_ota.ps1 -Version 1.0.2 -SkipBuild
 ```
 
 脚本会：编译 → 算 SHA256 → 校验镜像头 → 写清单 → 提交推送 → 触发 Pages 构建。
+
+仓库里每次只保留当前版本的镜像，旧版本留在 git 历史里（按 `fw-emote-<version>` 标签可取回）。
 
 `-Variant portrait` 已在脚本里预留，但竖屏固件目前没有 OTA 代码，先别用。
 
