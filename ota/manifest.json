@@ -1,7 +1,7 @@
 {
-    "firmware":  {
-                     "version":  "1.0.2",
-                     "url":  "https://lv741846122.github.io/xiaozhi-firmware/fw/emote-1.0.2.bin",
-                     "force":  0
-                 }
+    "firmware": {
+        "version": "1.0.1",
+        "url": "https://lv741846122.github.io/xiaozhi-firmware/fw/emote-1.0.1.bin",
+        "force": 0
+    }
 }
